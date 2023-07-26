@@ -1,0 +1,456 @@
+/* Theme 1 colors */
+.theme1 {
+    --logo-color: #ffffff;
+    --text-color: #ffffff;
+    --background-color: #27374d;
+    --about-color: #526d82;
+    --portfolio-color: #9db2bf;
+    --why-color: #475a74;
+    --contact-color: #a7cae0;
+}
+
+/* Theme 2 colors */
+.theme2 {
+    --logo-color: #331d2c;
+    --text-color: #ffffff;
+    --background-color: #efe1d1;
+    --about-color: #3f2e3e;
+    --portfolio-color: #a78295;
+    --why-color: #554753;
+    --contact-color: #88616d;
+}
+
+.theme3 {
+    --logo-color: #ffffff;
+    --text-color: #ffffff;
+    --background-color: #8b1874;
+    --about-color: #e67a1c;
+    --portfolio-color: #fc4f00;
+    --why-color: #ce416b;
+    --contact-color: #c9037a;
+}
+
+.theme4 {
+    --logo-color: #ffffff;
+    --text-color: #ffffff;
+    --background-color: #e67a1c;
+    --about-color: #fc8f12;
+    --portfolio-color: #f2b011;
+    --why-color: #faaa4e;
+    --contact-color: #ff9538;
+}
+
+.theme5 {
+    --logo-color: #ffffff;
+    --text-color: #000000;
+    --background-color: #729982;
+    --about-color: #bbd6b8;
+    --portfolio-color: #99d3b0;
+    --why-color: #90b38c;
+    --contact-color: #eaf8ca;
+}
+
+.theme6 {
+    --logo-color: #680807;
+    --text-color: #ffffff;
+    --background-color: #f5f5f5;
+    --about-color: #f24405;
+    --portfolio-color: #fa7f08;
+    --why-color: #f39877;
+    --contact-color: #e3371e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.container {
+    position: relative;
+}
+
+.about-page {
+    pointer-events: none;
+    z-index: 12;
+    top: 0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.about-container {
+    position: absolute;
+    margin: 4dvw;
+    user-select: none;
+}
+
+.header {
+    color: var(--text-color);
+    font-size: max(5rem);
+    margin: 5dvmin 0;
+}
+
+p {
+    color: var(--text-color);
+    margin-bottom: 4dvmin;
+    font-size: 2.5rem;
+}
+
+.span-hero {
+    display: block;
+}
+
+.logo-page {
+    overflow: hidden;
+    top: 0;
+    width: 100dvw;
+    height: 100dvh;
+    display: grid;
+    place-items: center;
+}
+
+.wrapper {
+    aspect-ratio: 4;
+    width: 90dvmin;
+    position: relative;
+}
+
+#calabaz {
+    width: 100%;
+    height: 100%;
+}
+
+#calabaz .s0 {
+    stroke: var(--logo-color);
+    stroke-dasharray: 1585;
+    stroke-dashoffset: 1585;
+    animation: line-anim 3s ease forwards;
+}
+
+#calabaz .s1 {
+    fill: #00000000;
+    animation: fill 1s ease-in-out forwards 2.8s;
+}
+
+@keyframes line-anim {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill {
+    from {
+        fill: #00000000;
+    }
+
+    to {
+        fill: var(--logo-color);
+    }
+}
+
+.bubbles {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.circle {
+    cursor: pointer;
+    position: absolute;
+    color: var(--text-color);
+    width: 0dvmin;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease;
+    transform: translate3d(var(--x, -50%), var(--y, -50%), 0) scale(var(--scale, 1));
+    transform-origin: center;
+}
+
+.inner-circle {
+    transition: transform 0.7s ease-in-out;
+    width: 10dvmax;
+    transform: scale(var(--scaleInner, 0));
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+#about {
+    background-color: var(--about-color);
+}
+
+#portfolio {
+    background-color: var(--portfolio-color);
+}
+
+#why {
+    background-color: var(--why-color);
+}
+
+#contact {
+    background-color: var(--contact-color);
+}
+
+#about.circle {
+    top: 110%;
+    left: 10%;
+    animation: scale-about 0.5s cubic-bezier(.76, -0.01, .48, 1.0) forwards 3.3s;
+}
+
+#portfolio.circle {
+    top: -20%;
+    left: 39%;
+    animation: scale-portfolio 0.5s cubic-bezier(.76, -0.01, .48, 1.0) forwards 3.6s;
+}
+
+#why.circle {
+    top: 130%;
+    left: 58%;
+    animation: scale-why 0.5s cubic-bezier(.76, -0.01, .48, 1.0) forwards 3.9s;
+}
+
+#contact.circle {
+    top: 36%;
+    left: 88%;
+    animation: scale-contact 0.5s cubic-bezier(.76, -0.01, .48, 1.0) forwards 4.2s;
+}
+
+@keyframes scale-about {
+    to {
+        width: 10dvmin;
+    }
+}
+
+@keyframes scale-portfolio {
+    to {
+        width: 18dvmin;
+    }
+}
+
+@keyframes scale-why {
+    to {
+        width: 13dvmin;
+    }
+}
+
+@keyframes scale-contact {
+    to {
+        width: 7dvmin;
+    }
+}
+
+.portfolio-page {
+    overflow: hidden;
+    top: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: 12;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+
+.bubbles-portfolio {
+    height: 100%;
+    width: 100%;
+    max-width: 55dvh;
+    position: absolute;
+}
+
+#portfolio1.circle {
+    background-size: cover;
+    top: 15%;
+    left: 25%;
+    width: 50%;
+}
+
+#portfolio2.circle {
+    background-size: cover;
+    top: 42%;
+    left: 22%;
+    width: 40%;
+}
+
+#portfolio3.circle {
+    background-size: cover;
+    top: 50%;
+    left: 75%;
+    width: 50%;
+}
+
+#portfolio4.circle {
+    background-size: cover;
+    top: 65%;
+    left: 33%;
+    width: 40%;
+}
+
+#portfolio5.circle {
+    background-size: cover;
+    top: 87%;
+    left: 55%;
+    width: 40%;
+}
+
+#portfolio6.circle {
+    background-size: cover;
+    top: 15%;
+    left: 80%;
+    width: 40%;
+}
+
+#portfolio7.circle {
+    background-size: cover;
+    top: 73%;
+    left: 84%;
+    width: 25%;
+}
+
+#portfolio8.circle {
+    background-size: cover;
+    top: 85%;
+    left: 16%;
+    width: 25%;
+}
+
+#portfolio9.circle {
+    background-size: cover;
+    top: 30%;
+    left: 55%;
+    width: 25%;
+}
+
+@media only screen and (min-aspect-ratio: 1) {
+    .bubbles-portfolio {
+        width: 100%;
+        height: auto;
+        max-height: 100dvw;
+        max-width: none;
+        aspect-ratio: 16/9;
+    }
+
+    #portfolio1.circle {
+        top: 25%;
+        left: 15%;
+        width: 25%;
+    }
+
+    #portfolio2.circle {
+        top: 40%;
+        left: 55%;
+        width: 20%;
+    }
+
+    #portfolio3.circle {
+        top: 63%;
+        left: 85%;
+        width: 25%;
+    }
+
+    #portfolio4.circle {
+        top: 80%;
+        left: 16%;
+        width: 20%;
+    }
+
+    #portfolio5.circle {
+        top: 82%;
+        left: 45%;
+        width: 20%;
+    }
+
+    #portfolio6.circle {
+        top: 20%;
+        left: 77%;
+        width: 20%;
+    }
+
+    #portfolio7.circle {
+        top: 83%;
+        left: 65%;
+        width: 15%;
+    }
+
+    #portfolio8.circle {
+        top: 55%;
+        left: 32%;
+        width: 15%;
+    }
+
+    #portfolio9.circle {
+        top: 18%;
+        left: 40%;
+        width: 15%;
+    }
+}
+
+.visible-scale {
+    visibility: visible;
+    scale: 1;
+    transition: scale 0.4s cubic-bezier(.76, -0.01, .48, 1.0);
+}
+
+.hidden-scale {
+    visibility: hidden;
+    scale: 0;
+    transition: visibility 0s 0.4s, scale 0.4s cubic-bezier(.76, -0.01, .48, 1.0);
+}
+
+@media only screen and (min-aspect-ratio: 16/9) {
+    .bubbles-portfolio {
+        width: auto;
+        height: 100%;
+        max-height: 100dvh;
+        max-width: none;
+        aspect-ratio: 16/9;
+    }
+}
+
+.close-container {
+    z-index: 100;
+    cursor: pointer;
+    position: fixed;
+    right: 5dvmin;
+    bottom: 5dvmin;
+    width: 10dvmin;
+    height: 10dvmin;
+    border-radius: 50%;
+    opacity: 0;
+    transition: scale 0.2s ease, opacity 0.5s ease;
+    will-change: transform;
+}
+
+.path-close {
+    fill: var(--text-color);
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.4s, opacity 0.4s ease;
+}
